@@ -4,8 +4,8 @@
 	{
 		return this.each( function()
 		{
-			var $this = $( this );
-			var start = parseInt( $this.text().replace( /,/g, "" ) );
+			var self = $( this );
+			var start = parseInt( self.text().replace( /,/g, "" ) );
 			commas = (commas === undefined) ? true : commas;
 			$( {value: start} ).animate( {value: stop},
 			{
@@ -13,20 +13,20 @@
 				easing: ease == undefined ? "swing" : ease,
 				step: function()
 				{
-					$this.text( Math.floor( this.value ) );
+					self.text( Math.floor( this.value ) );
 					if( commas )
 					{
-						$this.text( $this.text().replace( /(\d)(?=(\d\d\d)+(?!\d))/g, "$1," ) );
+						self.text( self.text().replace( /(\d)(?=(\d\d\d)+(?!\d))/g, "$1," ) );
 					}
 				},
 				complete: function()
 				{
-					if( parseInt( $this.text() ) !== stop )
+					if( parseInt( self.text() ) !== stop )
 					{
-						$this.text( stop );
+						self.text( stop );
 						if( commas )
 						{
-							$this.text( $this.text().replace( /(\d)(?=(\d\d\d)+(?!\d))/g, "$1," ) );
+							self.text( self.text().replace( /(\d)(?=(\d\d\d)+(?!\d))/g, "$1," ) );
 						}
 					}
 				}
