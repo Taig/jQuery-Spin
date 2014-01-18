@@ -2,36 +2,36 @@
 {
 	'use strict';
 
-	$.fn.animateNumbers = function( stop, commas, duration, ease )
+	$.fn.animateNumbers = function( stop, separator, duration, ease )
 	{
+		separator = $.extend( { thousand: ',', decimal: '.' }, separator );
+
 		return this.each( function()
 		{
 			var self = $( this ),
-				start = parseInt( self.text().replace( /,/g, '' ), 10 );
+				start = parseInt( self.text().replace( separator.thousand, '' ).replace( separator.decimal, '.' ) );
 
-			commas = (commas === undefined) ? true : commas;
+			function update( value )
+			{
+				self.text( value
+					.replace( '.', separator.decimal )
+					.replace( /(\d)(?=(\d\d\d)+(?!\d))/g, '$1' + separator.thousand )
+				);
+			}
 
 			$( { value: start } ).animate( { value: stop },
 			{
 				duration: duration === undefined ? 1000 : duration,
-				easing: ease === undefined ? 'swing' : ease,
+				easing: ease === undefined ? 'linear' : ease,
 				step: function()
 				{
-					self.text( Math.floor( this.value ) );
-					if( commas )
-					{
-						self.text( self.text().replace( /(\d)(?=(\d\d\d)+(?!\d))/g, '$1,' ) );
-					}
+					update( Math.floor( this.value ).toString() );
 				},
 				complete: function()
 				{
-					if( parseInt( self.text(), 10 ) !== stop )
+					if( parseInt( self.text() ) !== stop )
 					{
-						self.text( stop );
-						if( commas )
-						{
-							self.text( self.text().replace( /(\d)(?=(\d\d\d)+(?!\d))/g, '$1,' ) );
-						}
+						update( stop.toString() );
 					}
 				}
 			} );
