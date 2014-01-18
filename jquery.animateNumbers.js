@@ -9,7 +9,7 @@
 
 			commas = (commas === undefined) ? true : commas;
 
-			$( {value: start} ).animate( {value: stop},
+			$( { value: start } ).animate( { value: stop },
 			{
 				duration: duration == undefined ? 1000 : duration,
 				easing: ease == undefined ? "swing" : ease,
