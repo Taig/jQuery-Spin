@@ -4,9 +4,11 @@
 	{
 		return this.each( function()
 		{
-			var self = $( this );
-			var start = parseInt( self.text().replace( /,/g, "" ) );
+			var self = $( this ),
+				start = parseInt( self.text().replace( /,/g, "" ) );
+
 			commas = (commas === undefined) ? true : commas;
+
 			$( {value: start} ).animate( {value: stop},
 			{
 				duration: duration == undefined ? 1000 : duration,
