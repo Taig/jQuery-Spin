@@ -1,0 +1,27 @@
+{
+	"name": "jquery.animated-numbers",
+	"title": "jQuery AnimatedNumbers",
+	"description": "A jQuery plugin for animating numbers from an existing number to a new one.",
+	"version": "1.0.0",
+	"homepage": "https://github.com/Taig/jquery-animate-numbers",
+	"author":
+	{
+		"name": "Niklas Klein",
+		"email": "my.taig@gmail.com"
+	},
+	"repository":
+	{
+		"type": "git",
+		"url": "https://github.com/Taig/jquery-animate-numbers.git"
+	},
+	"licenses": [
+	{
+		"type": "MIT",
+		"url": "https://github.com/Taig/jQuery-Nested-Slides/blob/master/LICENSE-MIT"
+	} ],
+	"dependencies":
+	{
+		"jquery": "1.10.2"
+	},
+	"keywords": []
+}

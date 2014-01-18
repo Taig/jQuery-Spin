@@ -1,18 +1,20 @@
 ( function( $ )
 {
+	'use strict';
+
 	$.fn.animateNumbers = function( stop, commas, duration, ease )
 	{
 		return this.each( function()
 		{
 			var self = $( this ),
-				start = parseInt( self.text().replace( /,/g, '' ) );
+				start = parseInt( self.text().replace( /,/g, '' ), 10 );
 
 			commas = (commas === undefined) ? true : commas;
 
 			$( { value: start } ).animate( { value: stop },
 			{
-				duration: duration == undefined ? 1000 : duration,
-				easing: ease == undefined ? 'swing' : ease,
+				duration: duration === undefined ? 1000 : duration,
+				easing: ease === undefined ? 'swing' : ease,
 				step: function()
 				{
 					self.text( Math.floor( this.value ) );
@@ -23,7 +25,7 @@
 				},
 				complete: function()
 				{
-					if( parseInt( self.text() ) !== stop )
+					if( parseInt( self.text(), 10 ) !== stop )
 					{
 						self.text( stop );
 						if( commas )
