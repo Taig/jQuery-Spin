@@ -9,7 +9,7 @@
 		return this.each( function()
 		{
 			var self = $( this ),
-				start = parseInt( self.text().replace( separator.thousand, '' ).replace( separator.decimal, '.' ) );
+				start = parseFloat( self.text().replace( separator.thousand, '' ).replace( separator.decimal, '.' ) );
 
 			function update( value )
 			{
@@ -29,7 +29,7 @@
 				},
 				complete: function()
 				{
-					if( parseInt( self.text() ) !== stop )
+					if( parseFloat( self.text() ) !== stop )
 					{
 						update( stop.toString() );
 					}
