@@ -26,13 +26,6 @@
 				step: function()
 				{
 					update( Math.floor( this.value ).toString() );
-				},
-				complete: function()
-				{
-					if( parseFloat( self.text() ) !== stop )
-					{
-						update( stop.toString() );
-					}
 				}
 			} );
 		} );
