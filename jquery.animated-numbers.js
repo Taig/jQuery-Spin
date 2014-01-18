@@ -21,8 +21,8 @@
 
 			$( { value: start } ).animate( { value: stop },
 			{
-				duration: duration === undefined ? 1000 : duration,
-				easing: ease === undefined ? 'linear' : ease,
+				duration: duration || 1000,
+				easing: ease || 'linear',
 				step: function()
 				{
 					update( Math.floor( this.value ).toString() );
