@@ -16,6 +16,7 @@
 			{
 				self.text(
 					value
+						.toFixed( decimals )
 						.replace( '.', separator.decimal )
 						.replace( /(\d)(?=(\d\d\d)+(?!\d))/g, '$1' + separator.thousand )
 				);
@@ -25,7 +26,8 @@
 			{
 				duration: duration || 1000,
 				easing: ease || 'linear',
-				step: function() { update( this.value.toFixed( decimals ).toString() ); }
+				step: function() { update( this.value ); },
+				complete: function() { update( stop ); }
 			} );
 		} );
 	};
