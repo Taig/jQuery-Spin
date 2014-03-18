@@ -35,7 +35,7 @@
 			$( { value: start } ).animate( { value: stop },
 			{
 				duration: options.duration,
-				easing: options.ease,
+				easing: options.easing,
 				step: function() { update( this.value ); },
 				complete: function() { update( stop ); }
 			} );
