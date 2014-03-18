@@ -25,10 +25,7 @@
 			{
 				duration: duration || 1000,
 				easing: ease || 'linear',
-				step: function()
-				{
-					update( Math.floor( this.value ).toString() );
-				}
+				step: function() { update( this.value.toFixed( decimals ).toString() ); }
 			} );
 		} );
 	};
