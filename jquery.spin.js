@@ -2,30 +2,40 @@
 {
 	'use strict';
 
-	$.fn.spin = function( stop, separator, decimals, duration, ease )
+	$.fn.spin = function( stop, options )
 	{
-		separator = $.extend( { thousand: ',', decimal: '.' }, separator );
-		decimals = decimals === undefined ? 2 : decimals;
+		options = $.extend( true,
+		{
+			decimals: 2,
+			duration: 1000,
+			easing: 'swing',
+			separator: { thousand: ',', decimal: '.' }
+		}, options );
 
 		return this.each( function()
 		{
 			var self = $( this ),
-				start = parseFloat( self.text().replace( separator.thousand, '' ).replace( separator.decimal, '.' ) );
+				start = parseFloat(
+					self
+						.text()
+						.replace( options.separator.thousand, '' )
+						.replace( options.separator.decimal, '.' )
+				);
 
 			function update( value )
 			{
 				self.text(
 					value
-						.toFixed( decimals )
-						.replace( '.', separator.decimal )
-						.replace( /(\d)(?=(\d\d\d)+(?!\d))/g, '$1' + separator.thousand )
+						.toFixed( options.decimals )
+						.replace( '.', options.separator.decimal )
+						.replace( /(\d)(?=(\d\d\d)+(?!\d))/g, '$1' + options.separator.thousand )
 				);
 			}
 
 			$( { value: start } ).animate( { value: stop },
 			{
-				duration: duration === undefined ? 1000 : duration,
-				easing: ease || 'linear',
+				duration: options.duration,
+				easing: options.ease,
 				step: function() { update( this.value ); },
 				complete: function() { update( stop ); }
 			} );
