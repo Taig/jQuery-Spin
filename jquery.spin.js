@@ -2,9 +2,10 @@
 {
 	'use strict';
 
-	$.fn.animateNumbers = function( stop, separator, duration, ease )
+	$.fn.spin = function( stop, separator, decimals, duration, ease )
 	{
 		separator = $.extend( { thousand: ',', decimal: '.' }, separator );
+		decimals = decimals || 2;
 
 		return this.each( function()
 		{
@@ -13,9 +14,10 @@
 
 			function update( value )
 			{
-				self.text( value
-					.replace( '.', separator.decimal )
-					.replace( /(\d)(?=(\d\d\d)+(?!\d))/g, '$1' + separator.thousand )
+				self.text(
+					value
+						.replace( '.', separator.decimal )
+						.replace( /(\d)(?=(\d\d\d)+(?!\d))/g, '$1' + separator.thousand )
 				);
 			}
 

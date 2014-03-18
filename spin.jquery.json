@@ -1,7 +1,7 @@
 {
-	"name": "jquery.animated-numbers",
-	"title": "jQuery AnimatedNumbers",
-	"description": "A jQuery plugin for animating numbers from an existing number to a new one.",
+	"name": "jquery.spin",
+	"title": "jQuery Spin",
+	"description": "A jQuery plugin for spinning numbers in the fashion of a slot machine",
 	"version": "1.0.0",
 	"homepage": "https://github.com/Taig/jquery-animate-numbers",
 	"author":

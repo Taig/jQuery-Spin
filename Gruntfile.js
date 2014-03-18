@@ -7,7 +7,7 @@
 	{
 		grunt.initConfig(
 		{
-			pkg: grunt.file.readJSON( 'animated-numbers.jquery.json' ),
+			pkg: grunt.file.readJSON( 'spin.jquery.json' ),
 			banner:
 				'/*!\n' +
 				' * <%=pkg.title || pkg.name%> - <%=pkg.version%> (<%=grunt.template.today("yyyy-mm-dd")%>)\n' +
@@ -23,7 +23,7 @@
 				},
 				dist:
 				{
-					src: 'jquery.animated-numbers.js',
+					src: 'jquery.spin.js',
 					dest: 'dist/<%=pkg.name%>-<%=pkg.version%>.min.js'
 				}
 			},
