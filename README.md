@@ -12,4 +12,4 @@ Apply this plugin to a jQuery element that contains a number and it will animate
   } )
 ````
 
-[Live Example](http://jsfiddle.net/2v2Je/)
+[Live Example](http://jsfiddle.net/2v2Je/1/)
