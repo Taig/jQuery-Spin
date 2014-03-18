@@ -8,7 +8,7 @@ Apply this plugin to a jQuery element that contains a number and it will animate
     decimals: 2,                                // The amount of decimals to show; set 0 to disable
     duration: 1000,
     easing: 'swing',
-    separator: { thousand: ',', decimal: '.' }  // Will be merged recursivly
+    separator: { thousand: ',', decimal: '.' }  // Will be merged recursively
   } )
 ````
 
