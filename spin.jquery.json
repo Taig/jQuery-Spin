@@ -3,7 +3,7 @@
 	"title": "jQuery Spin",
 	"description": "A jQuery plugin for spinning numbers in the fashion of a slot machine",
 	"version": "1.0.0",
-	"homepage": "https://github.com/Taig/jquery-animate-numbers",
+	"homepage": "https://github.com/Taig/jQuery-Spin",
 	"author":
 	{
 		"name": "Niklas Klein",
@@ -12,7 +12,7 @@
 	"repository":
 	{
 		"type": "git",
-		"url": "https://github.com/Taig/jquery-animate-numbers.git"
+		"url": "https://github.com/Taig/jQuery-Spin.git"
 	},
 	"licenses": [
 	{
@@ -23,5 +23,5 @@
 	{
 		"jquery": "1.10.2"
 	},
-	"keywords": []
+	"keywords": [ "jQuery", "animation", "spin", "numbers", "slot machine" ]
 }
