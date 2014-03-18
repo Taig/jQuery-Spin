@@ -2,7 +2,7 @@
 {
 	'use strict';
 
-	$.fn.spin = function( stop, options )
+	$.fn.spin = function( target, options )
 	{
 		options = $.extend( true,
 		{
@@ -32,12 +32,12 @@
 				);
 			}
 
-			$( { value: start } ).animate( { value: stop },
+			$( { value: start } ).animate( { value: target },
 			{
 				duration: options.duration,
 				easing: options.easing,
 				step: function() { update( this.value ); },
-				complete: function() { update( stop ); }
+				complete: function() { update( target ); }
 			} );
 		} );
 	};
