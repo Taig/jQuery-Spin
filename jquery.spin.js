@@ -5,7 +5,7 @@
 	$.fn.spin = function( stop, separator, decimals, duration, ease )
 	{
 		separator = $.extend( { thousand: ',', decimal: '.' }, separator );
-		decimals = decimals || 2;
+		decimals = decimals === undefined ? 2 : decimals;
 
 		return this.each( function()
 		{
@@ -24,7 +24,7 @@
 
 			$( { value: start } ).animate( { value: stop },
 			{
-				duration: duration || 1000,
+				duration: duration === undefined ? 1000 : duration,
 				easing: ease || 'linear',
 				step: function() { update( this.value ); },
 				complete: function() { update( stop ); }
