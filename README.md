@@ -9,7 +9,7 @@ Apply this plugin to a jQuery element that contains a number and it will animate
     duration: 1000,
     easing: 'swing',
     separator: { thousand: ',', decimal: '.' }  // Will be merged recursively
-  } )
+  } );
 ````
 
 [Live Example](http://jsfiddle.net/2v2Je/1/)
