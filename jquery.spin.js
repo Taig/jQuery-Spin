@@ -37,7 +37,7 @@
 				duration: options.duration,
 				easing: options.easing,
 				step: function() { update( this.value ); },
-				complete: function() { update( target ); }
+				complete: function() { update( Number( target ) ); }
 			} );
 		} );
 	};
