@@ -18,7 +18,7 @@
 				start = parseFloat(
 					self
 						.text()
-						.replace( '/' + options.separator.thousand + '/g', '' )
+						.replace( new RegExp( '\\' + options.separator.thousand, 'g' ), '' )
 						.replace( options.separator.decimal, '.' )
 				);
 
