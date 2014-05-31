@@ -2,7 +2,7 @@
 	"name": "jquery.spin",
 	"title": "jQuery Spin",
 	"description": "A jQuery plugin for spinning numbers in the fashion of a slot machine",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"homepage": "https://github.com/Taig/jQuery-Spin",
 	"author":
 	{
